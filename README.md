@@ -3,7 +3,7 @@
 This project builds a RunPod-friendly ComfyUI Docker image for Z-Image Turbo
 generation.
 
-- ComfyUI is updated during the Docker build so current Z-Image nodes are present.
+- ComfyUI is cloned fresh during the Docker build so current Z-Image nodes are present.
 - Z-Image Turbo split files are downloaded at Pod startup.
 - Network Volume is optional.
 - `/workspace/ComfyUI` is used for runtime models, inputs, and outputs.

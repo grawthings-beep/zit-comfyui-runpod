@@ -18,12 +18,15 @@ COPY config/ /opt/runpod-comfy/config/
 COPY scripts/ /opt/runpod-comfy/scripts/
 COPY requirements-runtime.txt custom_nodes.txt /opt/runpod-comfy/
 RUN set -eux; \
-    python -m pip install --no-cache-dir -r /opt/runpod-comfy/requirements-runtime.txt; \
-    if [ -d "${COMFYUI_DIR}/.git" ]; then \
-      git -C "${COMFYUI_DIR}" fetch --depth 1 origin "${COMFYUI_REF}"; \
-      git -C "${COMFYUI_DIR}" checkout FETCH_HEAD; \
-      python -m pip install --no-cache-dir -r "${COMFYUI_DIR}/requirements.txt"; \
+    if command -v apt-get >/dev/null 2>&1; then \
+      apt-get update; \
+      apt-get install -y --no-install-recommends git ca-certificates; \
+      rm -rf /var/lib/apt/lists/*; \
     fi; \
+    rm -rf "${COMFYUI_DIR}"; \
+    git clone --depth 1 --branch "${COMFYUI_REF}" https://github.com/comfyanonymous/ComfyUI.git "${COMFYUI_DIR}"; \
+    python3 -m pip install --no-cache-dir -r /opt/runpod-comfy/requirements-runtime.txt; \
+    python3 -m pip install --no-cache-dir -r "${COMFYUI_DIR}/requirements.txt"; \
     chmod +x /opt/runpod-comfy/scripts/*.sh
 
 WORKDIR /opt/comfyui-baked
