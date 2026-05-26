@@ -1,0 +1,35 @@
+{
+  "models": [
+    {
+      "name": "Example SDXL Turbo checkpoint",
+      "enabled": false,
+      "url": "https://huggingface.co/stabilityai/sdxl-turbo/resolve/main/sd_xl_turbo_1.0_fp16.safetensors",
+      "path": "models/checkpoints/sd_xl_turbo_1.0_fp16.safetensors",
+      "sha256": ""
+    },
+    {
+      "name": "Example LoRA from environment variable",
+      "enabled": false,
+      "url": "${LORA_URL}",
+      "path": "models/loras/my_lora.safetensors",
+      "sha256": ""
+    },
+    {
+      "name": "Example gated Hugging Face model",
+      "enabled": false,
+      "url": "${HF_MODEL_URL}",
+      "path": "models/checkpoints/private_model.safetensors",
+      "headers": {
+        "Authorization": "Bearer ${HF_TOKEN}"
+      },
+      "sha256": ""
+    },
+    {
+      "name": "Example Civitai model",
+      "enabled": false,
+      "url": "${CIVITAI_MODEL_URL}?token=${CIVITAI_TOKEN}",
+      "path": "models/checkpoints/civitai_model.safetensors",
+      "sha256": ""
+    }
+  ]
+}

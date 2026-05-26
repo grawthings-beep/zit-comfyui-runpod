@@ -1,0 +1,3 @@
+# repo_url optional_ref
+# Keep this file small. Bake custom nodes here, keep large models out of Docker.
+https://github.com/ltdrdata/ComfyUI-Manager.git main
