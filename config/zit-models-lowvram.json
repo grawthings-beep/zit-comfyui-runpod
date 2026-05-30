@@ -19,11 +19,43 @@
       "path": "models/vae/ae.safetensors"
     },
     {
-      "name": "miku LoRA (Z-Image Turbo)",
+      "name": "miku LoRA (final, ~3000)",
       "enabled": true,
       "required": false,
-      "url": "https://huggingface.co/uwgm/miku/resolve/main/${MIKU_LORA_FILE}?download=true",
-      "path": "models/loras/${MIKU_LORA_FILE}",
+      "url": "https://huggingface.co/uwgm/miku/resolve/main/miku.safetensors?download=true",
+      "path": "models/loras/miku.safetensors",
+      "headers": { "Authorization": "Bearer ${HF_TOKEN}" }
+    },
+    {
+      "name": "miku LoRA 2000",
+      "enabled": true,
+      "required": false,
+      "url": "https://huggingface.co/uwgm/miku/resolve/main/miku_000002000.safetensors?download=true",
+      "path": "models/loras/miku_000002000.safetensors",
+      "headers": { "Authorization": "Bearer ${HF_TOKEN}" }
+    },
+    {
+      "name": "miku LoRA 2250",
+      "enabled": true,
+      "required": false,
+      "url": "https://huggingface.co/uwgm/miku/resolve/main/miku_000002250.safetensors?download=true",
+      "path": "models/loras/miku_000002250.safetensors",
+      "headers": { "Authorization": "Bearer ${HF_TOKEN}" }
+    },
+    {
+      "name": "miku LoRA 2500",
+      "enabled": true,
+      "required": false,
+      "url": "https://huggingface.co/uwgm/miku/resolve/main/miku_000002500.safetensors?download=true",
+      "path": "models/loras/miku_000002500.safetensors",
+      "headers": { "Authorization": "Bearer ${HF_TOKEN}" }
+    },
+    {
+      "name": "miku LoRA 2750",
+      "enabled": true,
+      "required": false,
+      "url": "https://huggingface.co/uwgm/miku/resolve/main/miku_000002750.safetensors?download=true",
+      "path": "models/loras/miku_000002750.safetensors",
       "headers": { "Authorization": "Bearer ${HF_TOKEN}" }
     }
   ]
